@@ -6,7 +6,7 @@ class TaxBracket
   end
 
   def calculate_tax_for(salary:)
-    return BigDecimal.new("0.00") if salary < range.min
+    return salary * 0 if salary < range.min
 
     max = salary > range.max ? range.max : salary
     (max - range.min) * multiplier

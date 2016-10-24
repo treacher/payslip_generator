@@ -6,7 +6,7 @@ class TaxCalculator
   end
 
   def calculate
-    tax_brackets.inject(BigDecimal.new("0.0")) do |sum, bracket|
+    tax_brackets.inject(salary * 0) do |sum, bracket|
       sum + bracket.calculate_tax_for(salary: salary)
     end
   end
