@@ -6,9 +6,11 @@ class TaxCalculator
   end
 
   def calculate
-    tax_brackets.inject(salary * 0) do |sum, bracket|
+    total_tax = tax_brackets.inject(salary * 0) do |sum, bracket|
       sum + bracket.calculate_tax_for(salary: salary)
     end
+
+    total_tax.round
   end
 
   private
