@@ -6,3 +6,4 @@ gem "rake"
 gem "rspec"
 gem "rubocop"
 gem "byebug", require: false
+gem "simplecov", require: false
