@@ -4,6 +4,7 @@ source "https://rubygems.org"
 
 gem "rake"
 gem "rspec"
-gem "rubocop"
+
+gem "rubocop", require: false
 gem "byebug", require: false
 gem "simplecov", require: false

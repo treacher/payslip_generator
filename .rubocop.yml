@@ -4,3 +4,5 @@ Style/Documentation:
   Enabled: false
 Metrics/LineLength:
   Max: 100
+FrozenStringLiteralComment:
+  Enabled: false

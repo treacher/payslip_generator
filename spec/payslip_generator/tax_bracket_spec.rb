@@ -1,10 +1,5 @@
-# frozen_string_literal: true
-require "spec_helper"
-require "bigdecimal"
-require "./lib/tax_bracket"
-
-describe TaxBracket do
-  subject { TaxBracket.new(range: 1001..2000, multiplier: 0.5) }
+describe PayslipGenerator::TaxBracket do
+  subject { described_class.new(range: 1001..2000, multiplier: 0.5) }
 
   describe "#calculate_tax_for" do
     context "salary is above the range" do

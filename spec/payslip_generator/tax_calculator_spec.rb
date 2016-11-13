@@ -1,9 +1,4 @@
-# frozen_string_literal: true
-require "spec_helper"
-require "bigdecimal"
-require "./lib/tax_calculator"
-
-describe TaxCalculator do
+describe PayslipGenerator::TaxCalculator do
   let(:salary) { BigDecimal.new("100000.50") }
   let(:tax_brackets) do
     [
@@ -13,7 +8,7 @@ describe TaxCalculator do
     ]
   end
 
-  subject { TaxCalculator.new(salary: salary, tax_brackets: tax_brackets) }
+  subject { described_class.new(salary: salary, tax_brackets: tax_brackets) }
 
   describe "#calculate" do
     context "rounds up" do
