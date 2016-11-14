@@ -31,7 +31,7 @@ describe PayslipGenerator::PayslipFactory do
     )
   end
 
-  describe "#generate" do
+  describe ".create" do
     it "returns a payslip hash" do
       expect(subject).to eq expected_payslip
     end
