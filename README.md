@@ -36,9 +36,7 @@ Max of `-1` is the equivilant of infinite.
 The Tax Bracket object takes a range and a multiplier, the idea behind this is
 that for a given tax system you will need to create multiple tax brackets and
 then apply them to a TaxCalculator, this provides the ability to support
-multiple tax systems. This could become configuration for example having
-`config/tax_brackets/nz.yml` this will then create the appropriate tax brackets
-for the given tax system,
+multiple tax systems.
 
 #### Tax Calculator
 
