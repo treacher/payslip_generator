@@ -5,6 +5,30 @@
 
 `bundle exec rake`
 
+## Building tax bracket yaml files
+
+Example:
+
+```YAML
+- multiplier: 0.0
+  min: 0
+  max: 18200
+- multiplier: 0.19
+  min: 18201
+  max: 37000
+- multiplier: 0.325
+  min: 37001
+  max: 80000
+- multiplier: 0.37
+  min: 80001
+  max: 180000
+- multiplier: 0.45
+  min: 180001
+  max: -1
+```
+
+Max of `-1` is the equivilant of infinite.
+
 ## Design decisions
 
 #### Tax Bracket

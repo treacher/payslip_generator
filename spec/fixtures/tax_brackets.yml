@@ -1,0 +1,9 @@
+- multiplier: 0.0
+  min: 0
+  max: 18200
+- multiplier: 0.19
+  min: 18201
+  max: 180000
+- multiplier: 0.45
+  min: 180001
+  max: -1

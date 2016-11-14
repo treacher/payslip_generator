@@ -1,4 +1,4 @@
-describe PayslipGenerator::PayslipFactory do
+describe PayslipGenerator::Factories::Payslip do
   let(:employee_attrs) do
     {
       first_name: "Michael",
@@ -9,9 +9,6 @@ describe PayslipGenerator::PayslipFactory do
     }
   end
 
-  let(:tax) { BigDecimal.new("50000") }
-
-  let(:tax_calculator) { double(:tax_calculator, calculate: tax) }
   let(:expected_payslip) do
     {
       first_name: "Michael",
@@ -23,6 +20,9 @@ describe PayslipGenerator::PayslipFactory do
       superannuation: 750
     }
   end
+
+  let(:tax) { BigDecimal.new("50000") }
+  let(:tax_calculator) { double(:tax_calculator, calculate: tax) }
 
   subject do
     described_class.create(

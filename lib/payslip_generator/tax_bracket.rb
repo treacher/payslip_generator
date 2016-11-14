@@ -12,7 +12,11 @@ module PayslipGenerator
       amount_to_tax * multiplier
     end
 
-    private
+    def ==(other)
+      range == other.range && multiplier == other.multiplier
+    end
+
+    protected
 
     attr_reader :range, :multiplier
   end

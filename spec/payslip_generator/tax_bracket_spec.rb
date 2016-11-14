@@ -28,5 +28,16 @@ describe PayslipGenerator::TaxBracket do
         expect(subject.calculate_tax_for(salary: salary)).to eq expected_tax
       end
     end
+
+    context "tax bracket to infinity" do
+      subject { described_class.new(range: 180_000..Float::INFINITY, multiplier: 0.40) }
+
+      let(:salary) { BigDecimal.new("250000") }
+      let(:expected_tax) { BigDecimal.new("28000") }
+
+      it "calculates the tax based on the difference between the salary and min" do
+        expect(subject.calculate_tax_for(salary: salary)).to eq expected_tax
+      end
+    end
   end
 end
