@@ -1,6 +1,10 @@
 # Payslip Generator
 
 
+## Running the tests
+
+`bundle exec rake`
+
 ## Design decisions
 
 #### Tax Bracket
@@ -16,6 +20,16 @@ for the given tax system,
 
 This is essentially a pretty simple object that takes a salary and an array of
 tax brackets and sums all the tax bracket calculations and rounds accordingly.
+
+#### Payslip Factory
+
+Initially I was going to have all the calculations as seperate classes but I felt
+the calculations were too simple to have in a single class as often they're just
+basic math operations.
+
+The class only calculates monthly payslips, it doesn't support partial months,
+this is to keep the first implementation simple. If I was to implement this I would
+inject an object which calculates a multiplier based on a date range.
 
 ## Assumptions made
 - Majority of tax calculations are performed using some form of bracket system.
