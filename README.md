@@ -21,3 +21,6 @@ tax brackets and sums all the tax bracket calculations and rounds accordingly.
 - Majority of tax calculations are performed using some form of bracket system.
   This assumption is based on information collected from the UK, Germany,
   Australia and New Zealand tax system.
+- Pay periods aren't taken into consideration when it comes to calculating the
+  monthly pay, so this solution doesn't cater for partial months only for
+  full months.
