@@ -7,7 +7,7 @@ begin
   RSpec::Core::RakeTask.new(:spec)
   RuboCop::RakeTask.new
 
-  task default: [:spec, :rubocop]
+  task default: [:rubocop, :spec]
 rescue LoadError
   puts "Failed to load"
 end
