@@ -1,6 +1,6 @@
 require "bigdecimal"
 require "yaml"
-require "ccsv"
+require "csv"
 
 require "payslip_generator/tax_bracket"
 require "payslip_generator/tax_calculator"
