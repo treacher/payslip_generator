@@ -3,15 +3,21 @@ module PayslipGenerator
     class Payslip
       class << self
         def create(employee:, tax_calculator:)
-          salary = employee.delete(:salary)
-          super_rate = employee.delete(:super_rate)
+          salary = employee[:salary]
+          super_rate = employee[:super_rate]
 
-          employee.merge(
+          {
+            full_name: full_name(employee),
+            pay_period: employee[:pay_period],
             gross_income: gross_income(salary),
             income_tax: income_tax(tax_calculator),
             net_income: net_income(salary, tax_calculator),
             superannuation: superannuation(salary, super_rate)
-          )
+          }
+        end
+
+        def full_name(employee)
+          "#{employee[:first_name]} #{employee[:last_name]}"
         end
 
         def gross_income(salary)

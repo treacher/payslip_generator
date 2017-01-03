@@ -11,8 +11,7 @@ describe PayslipGenerator::Factories::Payslip do
 
   let(:expected_payslip) do
     {
-      first_name: "Michael",
-      last_name: "Treacher",
+      full_name: "Michael Treacher",
       pay_period: "01 March - 31 March",
       gross_income: 12_500,
       income_tax: 4167,

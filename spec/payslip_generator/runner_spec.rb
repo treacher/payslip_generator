@@ -18,8 +18,8 @@ describe PayslipGenerator::Runner do
     it "creates a csv file storing the pay information" do
       expect(CSV.foreach(payslip_file.path).to_a).to eq(
         [
-          ["David", "Rudd", "01 March - 31 March", "5004", "922", "4082", "450"],
-          ["Ryan", "Chen", "01 March - 31 March", "10000", "2696", "7304", "1000"]
+          ["David Rudd", "01 March - 31 March", "5004", "922", "4082", "450"],
+          ["Ryan Chen", "01 March - 31 March", "10000", "2696", "7304", "1000"]
         ]
       )
     end
