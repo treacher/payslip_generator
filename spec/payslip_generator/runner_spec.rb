@@ -10,6 +10,8 @@ describe PayslipGenerator::Runner do
     )
   end
 
+  after { employee_file.close }
+
   describe "#run" do
     before { subject.run }
 
