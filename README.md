@@ -48,7 +48,7 @@ tax brackets and sums all the tax bracket calculations and rounds accordingly.
 
 #### Payslip Factory
 
-Initially I was going to have all the calculations as seperate classes but I felt
+Initially I was going to have all the calculations as separate classes but I felt
 the calculations were too simple to have in a single class as often they're just
 basic math operations.
 
@@ -56,17 +56,11 @@ The class only calculates monthly payslips, it doesn't support partial months,
 this is to keep the first implementation simple. If I was to implement this I would
 inject an object which calculates a multiplier based on a date range.
 
-#### Payslip Writers
+#### Payslip Writers && Employee Readers
 
 At the moment the only implementation supported is writing to CSV but I've
-implemented it so that you could inject any writer in that responds to `<<` and
-`close`. This overiddes `<<` from the CSV library and converts the payslip to CSV format.
-
-#### Employee Readers
-At the moment the only implementation supported is writing to CSV but I've
-implemented it so that you could inject any reader in that responds to `each`.
-This overiddes `each` from the CSV library and converts the row into the
-generic payslip format.
+implemented it so that you could inject any writer or reader in that adheres to
+the writer or reader interface.
 
 ## Assumptions made
 - Majority of tax calculations are performed using some form of bracket system.
