@@ -1,5 +1,8 @@
 # Payslip Generator
 
+## Running the application
+
+`./bin/generate-payslips <path-to-employee-data> <output-path-for-payslips>`
 
 ## Running the tests
 
@@ -53,6 +56,18 @@ The class only calculates monthly payslips, it doesn't support partial months,
 this is to keep the first implementation simple. If I was to implement this I would
 inject an object which calculates a multiplier based on a date range.
 
+#### Payslip Writers
+
+At the moment the only implementation supported is writing to CSV but I've
+implemented it so that you could inject any writer in that responds to `<<` and
+`close`. This overiddes `<<` from the CSV library and converts the payslip to CSV format.
+
+#### Employee Readers
+At the moment the only implementation supported is writing to CSV but I've
+implemented it so that you could inject any reader in that responds to `each`.
+This overiddes `each` from the CSV library and converts the row into the
+generic payslip format.
+
 ## Assumptions made
 - Majority of tax calculations are performed using some form of bracket system.
   This assumption is based on information collected from the UK, Germany,
@@ -60,3 +75,4 @@ inject an object which calculates a multiplier based on a date range.
 - Pay periods aren't taken into consideration when it comes to calculating the
   monthly pay, so this solution doesn't cater for partial months only for
   full months.
+- CSV file will not have headers in it.
