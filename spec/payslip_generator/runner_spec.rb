@@ -3,10 +3,17 @@ describe PayslipGenerator::Runner do
   let(:employee_reader) { PayslipGenerator::EmployeeReaders::CsvReader.new(employee_file) }
   let(:payslip_file) { Tempfile.new("payslips.csv") }
   let(:payslip_writer) { PayslipGenerator::PayslipWriters::CsvWriter.new(payslip_file) }
+  let(:tax_brackets) do
+    PayslipGenerator::Factories::TaxBracket.create(
+      brackets: YAML.load_file("config/tax_brackets/au.yml")
+    )
+  end
 
   subject do
     described_class.new(
-      employee_reader: employee_reader, payslip_writer: payslip_writer
+      employee_reader: employee_reader,
+      payslip_writer: payslip_writer,
+      tax_brackets: tax_brackets
     )
   end
 
