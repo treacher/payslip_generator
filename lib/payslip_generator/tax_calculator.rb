@@ -10,7 +10,7 @@ module PayslipGenerator
         sum + bracket.calculate_tax_for(salary: salary)
       end
 
-      total_tax.round
+      total_tax.round(0)
     end
 
     private
