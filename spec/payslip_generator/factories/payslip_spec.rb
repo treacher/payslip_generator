@@ -14,10 +14,10 @@ describe PayslipGenerator::Factories::Payslip do
       first_name: "Michael",
       last_name: "Treacher",
       pay_period: "01 March - 31 March",
-      gross_income: 125_00,
+      gross_income: 12_500,
       income_tax: 4167,
       net_income: 8333,
-      superannuation: 750
+      superannuation: 1125
     }
   end
 
