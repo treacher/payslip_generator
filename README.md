@@ -76,3 +76,6 @@ generic payslip format.
   monthly pay, so this solution doesn't cater for partial months only for
   full months.
 - CSV file will not have headers in it.
+
+## Future improvements
+- Add more tax bracket configuration files and add country code as an arguement for the `generate-payslips` script
