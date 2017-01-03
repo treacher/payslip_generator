@@ -2,11 +2,11 @@ module PayslipGenerator
   module Factories
     class Payslip
       class << self
-        def create(employee_attrs:, tax_calculator:)
-          salary = employee_attrs.delete(:salary)
-          super_rate = employee_attrs.delete(:super_rate)
+        def create(employee:, tax_calculator:)
+          salary = employee.delete(:salary)
+          super_rate = employee.delete(:super_rate)
 
-          employee_attrs.merge(
+          employee.merge(
             gross_income: gross_income(salary),
             income_tax: income_tax(tax_calculator),
             net_income: net_income(salary, tax_calculator),

@@ -6,7 +6,7 @@ module PayslipGenerator
     end
 
     def calculate_tax_for(salary:)
-      return salary * 0 if salary < range.min
+      return 0 if salary < range.min
 
       amount_to_tax = [salary, range.max].min - range.min
       amount_to_tax * multiplier

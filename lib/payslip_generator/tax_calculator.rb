@@ -6,7 +6,7 @@ module PayslipGenerator
     end
 
     def calculate
-      total_tax = tax_brackets.inject(salary * 0) do |sum, bracket|
+      total_tax = tax_brackets.inject(0) do |sum, bracket|
         sum + bracket.calculate_tax_for(salary: salary)
       end
 

@@ -1,5 +1,5 @@
 describe PayslipGenerator::Factories::Payslip do
-  let(:employee_attrs) do
+  let(:employee) do
     {
       first_name: "Michael",
       last_name: "Treacher",
@@ -26,7 +26,7 @@ describe PayslipGenerator::Factories::Payslip do
 
   subject do
     described_class.create(
-      employee_attrs: employee_attrs,
+      employee: employee,
       tax_calculator: tax_calculator
     )
   end

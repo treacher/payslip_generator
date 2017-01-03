@@ -9,7 +9,7 @@ module PayslipGenerator
     def run
       employee_reader.each do |employee|
         payslip_writer << Factories::Payslip.create(
-          employee_attrs: employee,
+          employee: employee,
           tax_calculator: tax_calculator(employee)
         )
       end
