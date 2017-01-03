@@ -3,13 +3,18 @@ $LOAD_PATH.unshift File.expand_path("../../lib", __FILE__)
 
 require "payslip_generator"
 
-employee_file = File.open(ARGV[0], "r")
-payslip_file = File.open(ARGV[1], "w")
+if ARGV.length == 2
+  employee_file = File.open(ARGV[0], "r")
+  payslip_file = File.open(ARGV[1], "w")
 
-employee_reader = PayslipGenerator::EmployeeReaders::CsvReader.new(employee_file)
-payslip_writer = PayslipGenerator::PayslipWriters::CsvWriter.new(payslip_file)
+  employee_reader = PayslipGenerator::EmployeeReaders::CsvReader.new(employee_file)
+  payslip_writer = PayslipGenerator::PayslipWriters::CsvWriter.new(payslip_file)
 
-PayslipGenerator::Runner.new(
-  employee_reader: employee_reader,
-  payslip_writer: payslip_writer
-).run
+  PayslipGenerator::Runner.new(
+    employee_reader: employee_reader,
+    payslip_writer: payslip_writer
+  ).run
+else
+  puts "Error: Not enough arguements provided"
+  puts "Usage: ./bin/generate-payslips <path-to-employee-data> <output-path-for-payslips>"
+end
